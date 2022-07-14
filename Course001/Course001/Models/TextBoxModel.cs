@@ -1,4 +1,4 @@
-﻿namespace Course001.ViewModels
+﻿namespace Course001.Models
 {
     public class TextBoxModel
     {

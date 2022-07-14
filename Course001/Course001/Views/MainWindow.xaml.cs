@@ -13,7 +13,7 @@ namespace Course001.Views
             InitializeComponent();
 
             // Window顶级控件的上下文信息
-            DataContext = new WindowModel();
+            DataContext = new MainWindowViewModel();
         }
     }
 }

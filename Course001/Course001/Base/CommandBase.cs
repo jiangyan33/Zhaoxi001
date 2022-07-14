@@ -9,7 +9,7 @@ namespace Course001.Base
 
         public bool CanExecute(object parameter)
         {
-            return DoCanExecute?.Invoke(parameter) == true;
+            return  true;
         }
 
         public void Execute(object parameter)
@@ -27,11 +27,5 @@ namespace Course001.Base
 
             DoCanExecute = func;
         }
-
-        public CommandBase()
-        {
-
-        }
-
     }
 }

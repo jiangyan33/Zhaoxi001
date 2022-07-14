@@ -1,25 +1,35 @@
-﻿<Window x:Class="Course001.Views.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:Course001"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        Title="{Binding Text}"
-        Width="800"
-        Height="450"
-        mc:Ignorable="d">
+﻿<Window
+    x:Class="Course001.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Course001"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding Text}"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
     <Grid>
-        <TextBox Height="20"
-                 Margin="20"
-                 VerticalAlignment="Top"
-                 Text="{Binding TextBoxModel.Text, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox
+            Height="20"
+            Margin="20"
+            VerticalAlignment="Top"
+            Text="{Binding TextBoxModel1.Text}" />
 
-        <Button Width="{Binding ButtonModel.Width}"
-                Height="20"
-                Margin="20,60,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Command="{Binding BtnCommand}"
-                Content="测试" />
+        <TextBox
+            Height="20"
+            Margin="20,60,20,20"
+            VerticalAlignment="Top"
+            Text="{Binding TextBoxModel2.Text}" />
+
+        <Button
+            Width="{Binding ButtonModel.Width}"
+            Height="20"
+            Margin="20,100,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Command="{Binding BtnCommand}">
+            <TextBlock Text="{Binding ButtonModel.Text}" />
+        </Button>
     </Grid>
 </Window>
