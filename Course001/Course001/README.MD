@@ -1,7 +1,7 @@
 ### Course001
 
 WPF和WindowForm
-1.WPF表现层和逻辑层分离，比如Views和ViewModes
+1.WPF表现层和逻辑层分离，比如Views和ViewModes,通过绑定表达式连接到一起
 
 2.现在都不可移植到其他平台， .Net5或者.Net6是运行时跨平台，表现层现在不支持。
 
