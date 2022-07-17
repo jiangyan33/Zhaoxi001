@@ -1,0 +1,31 @@
+﻿<Window
+    x:Class="Course003.CanvasWin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Course003"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="CanvasWin"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Canvas>
+        <!--
+            在Canvas源码中的ArrangeOverride 方法中，如果Left属性为空，才回去找Right，否则直接就取Left值了
+            https://github.com/dotnet/wpf/blob/main/src/Microsoft.DotNet.Wpf/src/PresentationFramework/System/Windows/Controls/Canvas.cs
+            
+            使用场景，组态。可以被Grid替代。外层一个Grid，里面使用Marin改变位置
+        -->
+        <Button Content="button2" />
+        <Button Canvas.Top="20" Content="button3" />
+        <Button Content="button4" />
+        <Button Content="button5" />
+        <Button Content="button6" />
+
+        <Button
+            Width="60"
+            Height="20"
+            Content="button1" />
+
+    </Canvas>
+</Window>

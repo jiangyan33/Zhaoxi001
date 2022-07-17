@@ -1,0 +1,28 @@
+﻿<Window
+    x:Class="Course003.UniformGridWin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Course003"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="UnifromGridWIn"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+
+    <!--  均分控件 UniformGrid下面的所有内容占据的位置大小都是均分的  -->
+
+    <!--  超出Uniform 布局的元素显示不出来 ，比如只有两行两列，但是按钮比较多（超过了4个），  超出了UniformGrid的内容  -->
+    <UniformGrid Columns="2" Rows="2">
+
+        <Button
+            Width="60"
+            Height="20"
+            Content="button1" />
+        <Button Content="button2" />
+        <Button Content="button3" />
+        <Button Content="button4" />
+        <Button Content="button5" />
+        <Button Content="button6" />
+    </UniformGrid>
+</Window>

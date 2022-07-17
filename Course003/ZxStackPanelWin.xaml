@@ -1,0 +1,20 @@
+﻿<Window
+    x:Class="Course003.ZxStackPanelWin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Course003"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="ZxStackPanelWin"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <local:ZxStackPanel>
+        <Button local:ZxStackPanel.Index="3" Content="Button1" />
+        <Button Content="Button2" />
+        <Button Content="Button3" />
+        <Button Content="Button4" />
+        <Button Content="Button5" />
+        <Button local:ZxStackPanel.Index="1" Content="Button6" />
+    </local:ZxStackPanel>
+</Window>

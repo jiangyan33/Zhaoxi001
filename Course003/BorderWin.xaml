@@ -1,0 +1,35 @@
+﻿<Window
+    x:Class="Course003.BorderWin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Course003"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="BorderWin"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <!--  Border  边线，背景色，圆角  -->
+    <!--  VirtualizingStackPanel 虚拟化StackPanel  -->
+    <!--
+        ItemsControl 没有滚动条，在外层可以增加一个ScrollViewer
+        需要关注下ItemsControl和ListBox的区别 
+    -->
+
+    <!--  Expander  菜单包含其展开项可以用这个来布局 展开之后会进行撑开  DropDownBox不是撑开，是在上面临时展开一个容器  -->
+
+    <Border
+        Background="Blue"
+        BorderBrush="Green"
+        BorderThickness="10"
+        CornerRadius="30">
+
+        <Grid>
+            <ListBox />
+            <ListView />
+
+            <DataGrid />
+        </Grid>
+    </Border>
+
+</Window>

@@ -1,0 +1,52 @@
+﻿<Window
+    x:Class="Course002.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Course002"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <!--  Window 继承ContentControl（内容控件），子元素只能有一个(Winfrom中的Form中有Controls属性，可以放多个)  -->
+
+    <!--  Grid 继承Panel，内容控件，可以放多个控件,后面的控件在前面的控件上面,可以通过修改ZIndex属性控制  -->
+    <Grid>
+        <!--<Border Background="Gray" />
+        <StackPanel Panel.ZIndex="-1" Background="Blue" />-->
+
+        <Grid.ColumnDefinitions>
+            <!--
+                Width=Auto时，会根据这个列的所有内容，选择最大的内容进行撑开，也就是列的宽度为内容最大的那个宽度
+                可以设置MinWidth和MaxWidth设置最大或者最小宽度
+                Auto、 *、 120
+            -->
+
+            <!--  WPF布局元素 gird的依赖属性Row,Column,RowSpan,ColumnSpan  -->
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <TextBlock Width="100" Text="11" />
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            Content="aaaaaaaaaaa" />
+    </Grid>
+</Window>

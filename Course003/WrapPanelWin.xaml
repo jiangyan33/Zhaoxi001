@@ -1,0 +1,34 @@
+﻿<Window
+    x:Class="Course003.WrapPanelWin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Course003"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="WrapPanelWin"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <!--  和StackPanel相比，如果放不下会进行折行，类似流式布局，折行的宽度为当前行高度最大的元素决定  -->
+
+    <!--  瀑布流布局也存在折行，效果不一样，会自动选择位置，根据控件的宽度  -->
+    <!--  应用场景 应用图标式布局，类似Window桌面图标排列  -->
+    <WrapPanel>
+        <Button
+            Width="500"
+            Height="40"
+            Content="Button1" />
+        <Button
+            Width="100"
+            Height="120"
+            Content="Button2" />
+        <Button
+            Width="500"
+            Height="40"
+            Content="Button3" />
+        <Button
+            Width="100"
+            Height="40"
+            Content="Button4" />
+    </WrapPanel>
+</Window>
