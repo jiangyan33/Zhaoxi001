@@ -1,0 +1,142 @@
+﻿<Window
+    x:Class="Course004.LayOutWin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Course004"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="LayOutWin"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <DockPanel>
+        <Grid
+            Height="30"
+            Background="Gray"
+            DockPanel.Dock="Top">
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                <Button Content="ACCs" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button Content="OK" />
+                <Button Content="OK" />
+                <Button Content="OK" />
+            </StackPanel>
+        </Grid>
+
+        <Border
+            Height="30"
+            Background="Gray"
+            DockPanel.Dock="Bottom" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition />
+
+            </Grid.RowDefinitions>
+            <StackPanel Background="Blue" />
+            <DockPanel Grid.Row="1">
+                <Border
+                    Width="300"
+                    Background="Green"
+                    DockPanel.Dock="Right" />
+                <Border
+                    Height="100"
+                    Background="Blue"
+                    DockPanel.Dock="Bottom">
+                    <TabControl>
+                        <TabItem Header="培养记录">
+                            <DataGrid>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="ID" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </TabItem>
+                    </TabControl>
+                </Border>
+                <Grid Width="150" Background="Green">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition />
+
+
+                    </Grid.RowDefinitions>
+                    <StackPanel Background="Gray" />
+
+                    <StackPanel Grid.Row="1" Background="#EEE" />
+
+                    <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+                        <UniformGrid Columns="2">
+                            <Border
+                                Height="20"
+                                Margin="5"
+                                Background="Orange" />
+                            <Border
+                                Height="20"
+                                Margin="5"
+                                Background="Orange" />
+                            <Border
+                                Height="20"
+                                Margin="5"
+                                Background="Orange" />
+                            <Border
+                                Height="20"
+                                Margin="5"
+                                Background="Orange" />
+                            <Border
+                                Height="20"
+                                Margin="5"
+                                Background="Orange" />
+                            <Border
+                                Height="20"
+                                Margin="5"
+                                Background="Orange" />
+                            <Border
+                                Height="20"
+                                Margin="5"
+                                Background="Orange" />
+                            <Border
+                                Height="20"
+                                Margin="5"
+                                Background="Orange" />
+                            <Border
+                                Height="20"
+                                Margin="5"
+                                Background="Orange" />
+                            <Border
+                                Height="20"
+                                Margin="5"
+                                Background="Orange" />
+                            <Border
+                                Height="20"
+                                Margin="5"
+                                Background="Orange" />
+                            <Border
+                                Height="20"
+                                Margin="5"
+                                Background="Orange" />
+                            <Border
+                                Height="20"
+                                Margin="5"
+                                Background="Orange" />
+                            <Border
+                                Height="20"
+                                Margin="5"
+                                Background="Orange" />
+                            <Border
+                                Height="20"
+                                Margin="5"
+                                Background="Orange" />
+                            <Border
+                                Height="20"
+                                Margin="5"
+                                Background="Orange" />
+                        </UniformGrid>
+                    </ScrollViewer>
+                </Grid>
+                <Border Background="Orange" />
+            </DockPanel>
+        </Grid>
+    </DockPanel>
+</Window>

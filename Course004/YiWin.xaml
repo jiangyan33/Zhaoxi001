@@ -1,0 +1,35 @@
+﻿<Window
+    x:Class="Course004.YiWin"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Course004"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="YiWin"
+    Width="800"
+    
+    Height="450"
+    AllowsTransparency="True"
+    Background="Transparent"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <!--  任意形状的窗口  -->
+    <Window.Clip>
+        <PathGeometry Figures="M 0 0 L200 0 A 50 75 0 0 1 200,150 L0,150z" />
+    </Window.Clip>
+    <StackPanel>
+        <Border
+            Height="30"
+            Background="Orange"
+            MouseLeftButtonDown="Border_MouseLeftButtonDown" />
+        <TextBox Text="Hello" />
+        <TextBox Text="World" />
+        <TextBox Text="Jiangyan" />
+        <TextBox Text="33" />
+        <TextBox Text="33" />
+        <TextBox Text="33" />
+        <TextBox Text="33" />
+        <TextBox Text="33" />
+        <TextBox Text="33" />
+    </StackPanel>
+</Window>

@@ -1,0 +1,41 @@
+﻿<Window
+    x:Class="Course004.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Course004"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    FontFamily="微软雅黑"
+    FontSize="30"
+    FontWeight="ExtraLight"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <!--
+        无边框实现 CaptionHeight标题栏高度（可以拖动的范围） UseAeroCaptionButtons是否使用标题栏的按钮（关闭，放大等）
+        正常情况下无法命中在Caption下的控件,如果可以命中控件，无法实现拖动效果
+        
+        任意形状的窗口，不使用WindowChrome.WindowChrome
+    -->
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="50" UseAeroCaptionButtons="False" />
+    </WindowChrome.WindowChrome>
+    <Grid Background="Green">
+        <Button
+            Width="200"
+            Height="100"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="ButtonOne"
+            WindowChrome.IsHitTestVisibleInChrome="True" />
+
+        <Button
+            Width="200"
+            Height="100"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Content="ButtonTwo" />
+    </Grid>
+</Window>
