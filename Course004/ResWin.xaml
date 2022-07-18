@@ -1,0 +1,34 @@
+﻿<Window x:Class="Course004.ResWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Course004"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="ResWin"
+        Width="800"
+        Height="450"
+        mc:Ignorable="d">
+    <Grid>
+        <StackPanel>
+
+            <Image Width="100"
+                   Height="100"
+                   Source="pack://application:,,,/Course004;component/Assets/Images/cat.gif" />
+
+            <Image Width="100"
+                   Height="100"
+                   Source="pack://application:,,,/Course004;component/Assets/Images/logo.png" />
+            <Border Width="100" Height="100">
+                <!--  边框设置的是背景色  -->
+                <Border.Background>
+                    <ImageBrush ImageSource="pack://application:,,,/Course004;component/Assets/Images/logo.png" />
+                </Border.Background>
+            </Border>
+
+            <TextBlock FontFamily="pack://application:,,,/Course004;component/Assets/Fonts/#iconfont"
+                       FontSize="30"
+                       Foreground="Red"
+                       Text="&#xe60A;" />
+        </StackPanel>
+    </Grid>
+</Window>

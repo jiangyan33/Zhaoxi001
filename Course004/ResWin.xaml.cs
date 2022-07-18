@@ -15,14 +15,13 @@ using System.Windows.Shapes;
 namespace Course004
 {
     /// <summary>
-    /// LayOutWin.xaml 的交互逻辑
+    /// ResWin.xaml 的交互逻辑
     /// </summary>
-    public partial class LayOutWin : Window
+    public partial class ResWin : Window
     {
-        public LayOutWin()
+        public ResWin()
         {
             InitializeComponent();
-
         }
     }
 }
