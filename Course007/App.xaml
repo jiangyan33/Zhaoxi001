@@ -1,8 +1,8 @@
 ﻿<Application
-    x:Class="Course004.App"
+    x:Class="Course007.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:Course004"
-    StartupUri="LayOutWin.xaml">
+    xmlns:local="clr-namespace:Course007"
+    StartupUri="TemplateLesson.xaml">
     <Application.Resources />
 </Application>

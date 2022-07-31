@@ -6,7 +6,7 @@
 
 3.Style.Triggers中的触发器优先级、内联属性、ControlTemplate.Triggers高
 
-4.控件模板，数据模板 
+4.控件模板ControlTemplate，数据模板DataTemplate 
 
 5.ItemsControl 在DataTemplate【子项】外层还包裹一层(ContentPresenter)，将这个整体放倒ItemsPanelTemplate的子项中，DateTemplate子项不是直接放到Panle中的
 
