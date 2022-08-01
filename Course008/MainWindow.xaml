@@ -1,0 +1,17 @@
+﻿<Window
+    x:Class="Course008.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Course008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    FontSize="30"
+    mc:Ignorable="d">
+    <!--  window设置的FontSize属性，可以被继承下来，这个属性支持继承，fontSize本身是一个依赖属性，每一个控件都会有一个这样的依赖属性  -->
+    <Grid>
+        <TextBlock FontSize="12" />
+    </Grid>
+</Window>
