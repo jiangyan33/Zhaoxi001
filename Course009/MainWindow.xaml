@@ -1,0 +1,40 @@
+﻿<Window
+    x:Class="Course009.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Course009"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+    Name="window"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <sys:String x:Key="dataStr">Hello Zhaoxi</sys:String>
+
+        <x:Array x:Key="strArr" Type="sys:String">
+            <sys:String>Hello1</sys:String>
+            <sys:String>Hello2</sys:String>
+            <sys:String>Hello3</sys:String>
+            <sys:String>Hello4</sys:String>
+        </x:Array>
+
+        <local:StaticModel x:Key="staticModel" />
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <!--  使用Binding Element+Path进行绑定  -->
+            <TextBlock Text="{Binding ElementName=window, Path=Title}" />
+            <!--  使用Binding Source+Path进行绑定，如果Path=. 表示不去找Source源中的某一个属性，而是使用Source源本身，这种情况时，Path可以省略  -->
+            <TextBlock Text="{Binding Source={StaticResource dataStr}, Path=.}" />
+
+            <!--  使用数组下标进行绑定  -->
+            <TextBlock Text="{Binding Source={StaticResource strArr}, Path=[2].Length}" />
+
+            <!--  绑定对象的静态属性,不需要向上查找数据 源  -->
+            <TextBlock Text="{Binding Path=(local:StaticModel.Value)}" />
+        </StackPanel>
+    </Grid>
+</Window>
