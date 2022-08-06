@@ -1,0 +1,44 @@
+﻿<Window
+    x:Class="Course011.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Course011"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <local:MainViewModel />
+    </Window.DataContext>
+
+    <Window.Resources />
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="{Binding Value, StringFormat={}{0:C2}}" />
+            <TextBlock Text="{Binding CreateTime, StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}" />
+            <TextBlock Text="{Binding UpdateTime, FallbackValue=更新时间}" />
+            <TextBlock Text="{Binding UserName, TargetNullValue=用户名}" />
+            <TextBox Name="tb">
+                <TextBox.Text>
+                    <Binding Path="Gender">
+                        <Binding.ValidationRules>
+                            <local:GenderValidationRule />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+
+            <TextBlock Text="{Binding Path=(Validation.Errors)[0].ErrorContent, ElementName=tb}" />
+
+
+
+            <TextBox Name="tb1" Text="{Binding Age, ValidatesOnDataErrors=True}" />
+
+            <TextBlock Text="{Binding Path=(Validation.Errors)[0].ErrorContent, ElementName=tb1}" />
+
+            <Button Content="123" />
+        </StackPanel>
+    </Grid>
+</Window>
