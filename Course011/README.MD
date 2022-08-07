@@ -9,3 +9,5 @@
  4.FallBackValue=000,当找不到绑定的值时，UI上显示000
 
  5.TargetNullValue=111，当绑定的目标值为Null时显示111
+
+ 6.校验 IDataErrorInfo,可以通过自定义注解

@@ -10,7 +10,7 @@ namespace Course011
     public class MainViewModel : IDataErrorInfo
     {
 
-        public int Value { get; set; } = 123456789;
+        public int Value { get; set; } = 789;
 
         public DateTime CreateTime { get; set; } = DateTime.Now;
 

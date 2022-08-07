@@ -16,6 +16,25 @@
     <Window.Resources />
     <Grid>
         <StackPanel>
+            <!--  货币  -->
+            <TextBlock Text="{Binding Value, StringFormat={}{0:C}, ConverterCulture=zh-CN}" />
+            <!--  文字接  -->
+            <TextBlock Text="{Binding Value, StringFormat=单价:{0:C}元, ConverterCulture=zh-CN}" />
+
+            <!--  数字 固定10位  -->
+            <TextBlock Text="{Binding Value, StringFormat={}{0:D10}, ConverterCulture=zh-CN}" />
+            <!--  数字 保留2位小数  -->
+            <TextBlock Text="{Binding Value, StringFormat={}{0:F2}}" />
+            <!--  数字 千分位加3位小数  -->
+            <TextBlock Text="{Binding Value, StringFormat={}{0:N3}}" />
+
+            <!--  数字 百分比加1位小数  -->
+            <TextBlock Text="{Binding Value, StringFormat={}{0:P1}}" />
+ 
+            <!--  数字 占位  -->
+            <TextBlock Foreground="Orange" Text="{Binding Value, StringFormat={}{0:0000.00}}" />
+            <TextBlock Text="{Binding Value, StringFormat={}{0:####.##}}" />
+
             <TextBlock Text="{Binding Value, StringFormat={}{0:C2}}" />
             <TextBlock Text="{Binding CreateTime, StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}" />
             <TextBlock Text="{Binding UpdateTime, FallbackValue=更新时间}" />
