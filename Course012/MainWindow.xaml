@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MainWindow"
     Width="800"
-    Height="450"
+    Height="850"
     mc:Ignorable="d">
     <Window.DataContext>
         <local:MainViewModel Value1="Hello" Value2="Zhaoxi" />
@@ -40,5 +40,84 @@
             <Run Text="-" />
             <Run Text="{Binding Value2}" />
         </TextBlock>
+
+        <Line
+            Stroke="Red"
+            StrokeThickness="2"
+            X1="0"
+            X2="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=ActualWidth}"
+            Y1="0"
+            Y2="100" />
+
+        <Line
+            Stroke="Green"
+            StrokeThickness="2"
+            X1="0"
+            X2="{Binding RelativeSource={RelativeSource Self}, Path=ActualWidth}"
+            Y1="0"
+            Y2="100" />
+
+        <!--  矩形的圆角宽和高可以不一样，border是都一样的  -->
+
+        <Border
+            Height="30"
+            BorderBrush="Green"
+            BorderThickness="1"
+            CornerRadius="20" />
+
+        <Rectangle
+            Height="30"
+            RadiusX="100"
+            RadiusY="13"
+            Stroke="Red"
+            StrokeThickness="1" />
+        <!--  多段线和多边形  一个会闭合，一个不会  -->
+        <Polyline
+            Points="0,0 20,20,50,10"
+            Stroke="Red"
+            StrokeThickness="1" />
+
+        <Polygon
+            Points="0,0 20,20,50,10"
+            Stroke="Red"
+            StrokeThickness="1" />
+
+        <!--  Path 配合几何图形可以完成各种各样的形状  -->
+
+        <Path
+            Margin="0,10,0,0"
+            Stroke="Red"
+            StrokeThickness="1">
+            <Path.Data>
+                <GeometryGroup>
+                    <LineGeometry StartPoint="0,0" EndPoint="50,50" />
+                    <RectangleGeometry Rect="0,0,50,50" />
+                    <EllipseGeometry
+                        Center="25,25"
+                        RadiusX="25"
+                        RadiusY="25" />
+                </GeometryGroup>
+            </Path.Data>
+        </Path>
+
+        <Path Stroke="Orange" StrokeThickness="1">
+            <Path.Data>
+                <PathGeometry>
+                    <!--  一组几何图形  -->
+                    <PathFigure StartPoint="0,0">
+                        <!--  一个笔画  -->
+                        <LineSegment Point="50,50" />
+                        <LineSegment Point="100,30" />
+                        <!--  圆弧 Point结束点 ,Size圆弧的宽和高 ,SweepDirection画的方向（顺时针或者逆时针）IsLargeArc是否是大圆弧 RotationAngle旋转角度，旋转会放大圆弧的宽高  -->
+                        <ArcSegment
+                            IsLargeArc="True"
+                            Point="30,40"
+                            RotationAngle="30"
+                            Size="100,50"
+                            SweepDirection="Clockwise" />
+                    </PathFigure>
+                </PathGeometry>
+            </Path.Data>
+        </Path>
     </StackPanel>
 </Window>

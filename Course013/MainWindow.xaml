@@ -1,0 +1,44 @@
+﻿<Window
+    x:Class="Course013.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Course013"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="850"
+    mc:Ignorable="d">
+    <Grid>
+        <Path
+            Data="M100,100 L200,100 v100 H100 L100 100"
+            Stroke="Green"
+            StrokeThickness="2" />
+
+        <!--  宽高 旋转角度 是否优势 扫描方向 结束点 A:绝对坐标  -->
+        <Path
+            Data="M100 300 A50 100 0 1 1 100 400"
+            Stroke="Red"
+            StrokeThickness="2" />
+
+        <!--  变形分为布局和渲染，渲染不会影响其他控件，比较常用,控件都可以进行变形，变形之后只是在视觉上影响，实际位置还在原来的位置  -->
+        <!--  RenderTransformOrigin 进行变换的中心点坐标  -->
+        <!--  组合变形的中心点不变  -->
+        <Border
+            Width="100"
+            Height="100"
+            Background="Orange"
+            RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <!--  位移和中心点没关系  -->
+                <!--<TranslateTransform X="100" Y="100" />-->
+                <!--  旋转  -->
+                <!--<RotateTransform Angle="-45" />-->
+                <!--  缩放  -->
+                <!--<ScaleTransform ScaleX="2" ScaleY="0.5" />-->
+                <!--  斜切  -->
+                <SkewTransform AngleX="30" AngleY="120" />
+            </Border.RenderTransform>
+        </Border>
+    </Grid>
+</Window>

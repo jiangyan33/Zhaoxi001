@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="Course013.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Course013"
+    StartupUri="BrushWin.xaml">
+    <Application.Resources />
+</Application>
