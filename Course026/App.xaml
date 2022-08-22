@@ -1,0 +1,8 @@
+﻿<prism:PrismApplication
+    x:Class="Course026.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Course026"
+    xmlns:prism="http://prismlibrary.com/">
+    <Application.Resources />
+</prism:PrismApplication>
