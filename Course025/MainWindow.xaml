@@ -8,6 +8,4 @@
     Title="MainWindow"
     Width="800"
     Height="450"
-    mc:Ignorable="d">
-    <Grid />
-</Window>
+    mc:Ignorable="d" />
