@@ -51,6 +51,9 @@
 
             <!--  BeginTime  动画开始执行前花费的时间，AutoReverse,自动返回 RepeatBehavior:动画重复  -->
             <PointAnimation
+                AutoReverse="True"
+                BeginTime="0:0:2"
+                RepeatBehavior="2x"
                 Storyboard.TargetName="e"
                 Storyboard.TargetProperty="Center"
                 To="100,100"
