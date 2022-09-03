@@ -13,27 +13,110 @@
 
     <Window.Resources>
         <Storyboard x:Key="sb">
-            <StringAnimationUsingKeyFrames Storyboard.TargetName="txt" Storyboard.TargetProperty="Text">
-                <DiscreteStringKeyFrame KeyTime="0:0:1" Value="H" />
+            <!--  离散关键帧  -->
+            <!--<StringAnimationUsingKeyFrames Storyboard.TargetName="txt" Storyboard.TargetProperty="Text">
+                <DiscreteStringKeyFrame KeyTime="0:0:1" Value="H" /> 
                 <DiscreteStringKeyFrame KeyTime="0:0:2" Value="HE" />
                 <DiscreteStringKeyFrame KeyTime="0:0:3" Value="HEL" />
                 <DiscreteStringKeyFrame KeyTime="0:0:4" Value="HELL" />
                 <DiscreteStringKeyFrame KeyTime="0:0:5" Value="HELLO" />
-            </StringAnimationUsingKeyFrames>
+            </StringAnimationUsingKeyFrames>-->
 
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="Width">
+            <!--  线性关键帧  -->
+            <!--<DoubleAnimationUsingKeyFrames Storyboard.TargetName="border" Storyboard.TargetProperty="Width">
 
                 <LinearDoubleKeyFrame KeyTime="0:0:1" Value="200" />
                 <LinearDoubleKeyFrame KeyTime="0:0:2" Value="300" />
                 <LinearDoubleKeyFrame KeyTime="0:0:3" Value="400" />
                 <LinearDoubleKeyFrame KeyTime="0:0:4" Value="500" />
                 <DiscreteDoubleKeyFrame KeyTime="0:0:5" Value="200" />
-            </DoubleAnimationUsingKeyFrames>
+            </DoubleAnimationUsingKeyFrames>-->
+
+            <!--  缓动关键帧  -->
+            <!--<DoubleAnimationUsingKeyFrames Storyboard.TargetName="border1" Storyboard.TargetProperty="Width">
+
+                <EasingDoubleKeyFrame KeyTime="0:0:3" Value="100">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BounceEase />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:6" Value="150">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <ElasticEase />
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>-->
+            <!--  任意类型的关键帧动画  -->
+            <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetName="txt" Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame KeyTime="0:0:3">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Hidden</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+
+                <DiscreteObjectKeyFrame KeyTime="0:0:6">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>-->
+
+            <!--  路径动画  -->
+
+            <!--<DoubleAnimationUsingPath
+                Source="X"
+                Storyboard.TargetName="tt"
+                Storyboard.TargetProperty="X"
+                Duration="0:0:5">
+                <DoubleAnimationUsingPath.PathGeometry>
+                    <PathGeometry Figures="M0,0 100,50 A100,100, 0 0 1 200 200" />
+                </DoubleAnimationUsingPath.PathGeometry>
+            </DoubleAnimationUsingPath>
+
+            <DoubleAnimationUsingPath
+                Source="Y"
+                Storyboard.TargetName="tt"
+                Storyboard.TargetProperty="Y"
+                Duration="0:0:5">
+                <DoubleAnimationUsingPath.PathGeometry>
+                    <PathGeometry Figures="M0,0 100,50 A100,100, 0 0 1 200 200" />
+                </DoubleAnimationUsingPath.PathGeometry>
+            </DoubleAnimationUsingPath>
+
+            <DoubleAnimationUsingPath
+                Source="Angle"
+                Storyboard.TargetName="rt"
+                Storyboard.TargetProperty="Angle"
+                Duration="0:0:5">
+                <DoubleAnimationUsingPath.PathGeometry>
+                    <PathGeometry Figures="M0,0 100,50 A100,100, 0 0 1 200 200" />
+                </DoubleAnimationUsingPath.PathGeometry>
+            </DoubleAnimationUsingPath>
+
+            <PointAnimationUsingPath
+                Storyboard.TargetName="eg"
+                Storyboard.TargetProperty="Center"
+                Duration="0:0:5">
+                <PointAnimationUsingPath.PathGeometry>
+                    <PathGeometry Figures="M0,0 100,50 A100,100, 0 0 1 200 200" />
+                </PointAnimationUsingPath.PathGeometry>
+            </PointAnimationUsingPath>-->
+
+            <MatrixAnimationUsingPath
+                DoesRotateWithTangent="True"
+                Storyboard.TargetName="mt"
+                Storyboard.TargetProperty="Matrix"
+                Duration="0:0:5">
+                <MatrixAnimationUsingPath.PathGeometry>
+                    <PathGeometry Figures="M0,0 100,50 A100,100, 0 0 1 200 200" />
+                </MatrixAnimationUsingPath.PathGeometry>
+            </MatrixAnimationUsingPath>
+
         </Storyboard>
     </Window.Resources>
 
     <Window.Triggers>
-        <EventTrigger RoutedEvent="Loaded" SourceName="window">
+        <EventTrigger RoutedEvent="Button.Click" SourceName="btn">
             <BeginStoryboard Storyboard="{StaticResource sb}" />
         </EventTrigger>
     </Window.Triggers>
@@ -45,7 +128,49 @@
                 Width="100"
                 Height="50"
                 Background="Orange" />
-            <TextBlock Name="txt" />
+            <TextBlock Name="txt" Text="HelloWorld" />
+
+            <Border
+                Name="border1"
+                Width="50"
+                Height="20"
+                Background="Red" />
+
+            <Border
+                Name="border2"
+                Width="50"
+                Height="20"
+                HorizontalAlignment="Left"
+                Background="Red">
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform x:Name="rt" />
+                        <TranslateTransform x:Name="tt" />
+                        <MatrixTransform x:Name="mt" />
+                    </TransformGroup>
+                </Border.RenderTransform>
+            </Border>
+
+            <!--<Path Fill="Green">
+                <Path.Data>
+                    <EllipseGeometry
+                        x:Name="eg"
+                        Center="0,0"
+                        RadiusX="20"
+                        RadiusY="20" />
+                </Path.Data>
+            </Path>-->
+
+            <Path
+                Data="M0,0 100,50 A100,100, 0 0 1 200 200"
+                Stroke="Black"
+                StrokeThickness="1" />
+
+
         </StackPanel>
+        <Button
+            Name="btn"
+            VerticalAlignment="Bottom"
+            Content="执行" />
     </Grid>
 </Window>
