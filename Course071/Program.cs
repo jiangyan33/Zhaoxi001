@@ -60,9 +60,6 @@ namespace Course071
             socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9080));
 
 
-
-
-
             // 一直请求某一个命令，使用心跳处理（超时时间）
 
 
