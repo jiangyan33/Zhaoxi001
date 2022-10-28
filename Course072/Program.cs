@@ -23,7 +23,7 @@ namespace Course072
             //var msg = "Hello";
 
             //var data = Encoding.UTF8.GetBytes(msg);
-            //// 这里会卡线程
+            //// 这里会卡线程，Framework框架没有问题。netCore不行
             //var state = socket.BeginSend(data, 0, data.Length, SocketFlags.None,
             //    new AsyncCallback(ret =>
             //    {

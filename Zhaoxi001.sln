@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.32112.339
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Course001", "Course001\Course001\Course001.csproj", "{7D0CA507-1E2D-43C3-B30F-D23E834C7739}"
 EndProject
@@ -70,7 +70,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Course070", "Course070\Cour
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Course071", "Course071\Course071.csproj", "{BCD88A3B-015C-4C20-8426-50F41888A1E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Course072", "Course072\Course072.csproj", "{7F352BDD-FE85-4B11-85C6-2E06B9A36D3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Course072", "Course072\Course072.csproj", "{7F352BDD-FE85-4B11-85C6-2E06B9A36D3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Course073", "Course073\Course073.csproj", "{FF7B20A6-977F-46B8-A650-F0CA838445B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -206,6 +208,10 @@ Global
 		{7F352BDD-FE85-4B11-85C6-2E06B9A36D3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F352BDD-FE85-4B11-85C6-2E06B9A36D3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F352BDD-FE85-4B11-85C6-2E06B9A36D3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF7B20A6-977F-46B8-A650-F0CA838445B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF7B20A6-977F-46B8-A650-F0CA838445B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF7B20A6-977F-46B8-A650-F0CA838445B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF7B20A6-977F-46B8-A650-F0CA838445B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
