@@ -4,6 +4,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Text.Unicode;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Course071
 {
@@ -11,10 +12,12 @@ namespace Course071
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Test1();
+        }
 
-            // 这样设置的是TCP服务
-            var socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        private static void Test1()
+        {
+            Console.WriteLine("Hello World!");
 
             #region 服务端
             //// 本地地址+端口
@@ -22,7 +25,6 @@ namespace Course071
 
             //// 连接排队的数量，等待接受连接的最大数量
             //socket.Listen(5);
-
 
             //Console.WriteLine("服务监听已经启动");
 
@@ -32,13 +34,21 @@ namespace Course071
             // 接收超时时间，超过一定的时候时会报错，需要设置TryCatch
             //socket.ReceiveTimeout = 5000;
 
-            //socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9080));
+            //socket.Connect(new IPEndPoint(IPAddress.Parse("192.168.8.119"), 8080));
 
-            //var bytes = Encoding.UTF8.GetBytes("zhaoxijiaoyu");
+            ////var bytes = Encoding.UTF8.GetBytes("zhaoxijiaoyu");
 
-            //socket.Send(bytes);
+            ////socket.Send(bytes);
 
-            //var buffer = new byte[1024];
+            //byte[] buffer = new byte[] { 0x97, 0x07, 0x01, 0x04, 0x00, 0x0F, 0x00, 0x01, 0x00, 0x01, 0x01, 0x00, 0x0D };
+
+
+            //for (var i = 1; i < 5; i++)
+            //{
+            //    socket.Send(buffer);
+
+            //    Thread.Sleep(1000);
+            //}
 
             //try
             //{
@@ -55,12 +65,21 @@ namespace Course071
 
             #region 客户端断线重连
 
+            // 这样设置的是TCP服务
+            Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
             socket.ReceiveTimeout = 5000;
+            try
+            {
+                socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8087));
+            }
+            catch
+            {
 
-            socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9080));
+            }
 
 
-            // 一直请求某一个命令，使用心跳处理（超时时间）
+            //一直请求某一个命令，使用心跳处理（超时时间）
 
 
             // 保留最后一次操作是的状态，不是实时状态
@@ -70,10 +89,25 @@ namespace Course071
             {
 
                 // 上位机直连PCL,判断检查状态
-                var state = !(!socket.Connected || (socket.Poll(1, SelectMode.SelectRead) && socket.Poll(1, SelectMode.SelectWrite) && socket.Available == 0));
+                //var state = !(!socket.Connected || (socket.Poll(1, SelectMode.SelectRead) && socket.Poll(1, SelectMode.SelectError) && socket.Available == 0));
 
                 // tcp直连 通过这种方式判断，中间经过路由器需要通过心跳包处理
-                var num = socket.Send(Encoding.UTF8.GetBytes("Hello"));
+
+                var state = true;
+
+                try
+                {
+
+                    var bytes = new byte[] { 0x97, 0x07, 0x01, 0x04, 0x00, 0x0F, 0x00, 0x01, 0x00, 0x01, 0x01, 0x00, 0x0D };
+
+                    var num = socket.Send(bytes);
+
+                    state = true;
+                }
+                catch (Exception ex)
+                {
+                    state = false;
+                }
 
                 if (state)
                 {
@@ -89,33 +123,31 @@ namespace Course071
 
                     try
                     {
-                        // 不会卡线程
-                        var ret = socket.BeginConnect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9080), null, null);
+                        //socket.Shutdown(SocketShutdown.Both);
 
-                        var s = ret.AsyncWaitHandle.WaitOne(2000);
+                        socket.Dispose();
 
-                        if (s)
-                        {
-                            Console.WriteLine(DateTime.Now.ToString("HH:mm:ss") + "tcp重连成功" + state);
-                        }
-                        else
-                        {
+                        socket = null;
 
-                            // 连接失败，销毁这次的连接操作
+                        socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-                            // 无法连接成功这里会卡在这里大概20s,然后报错
-                         //    socket.EndConnect(ret);
+                        socket.ReceiveTimeout = 5000;
 
-                            Console.WriteLine(DateTime.Now.ToString("HH:mm:ss") + "tcp重连失败" + state);
-                        }
+                        socket.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 8087));
+
+                        Console.WriteLine(DateTime.Now.ToString("HH:mm:ss") + "tcp重连成功");
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
+
+                        //socket.Disconnect(true);
+
                         Console.WriteLine(DateTime.Now.ToString("HH:mm:ss") + "tcp重连失败");
                     }
 
                 }
             }
+
 
             #endregion
             Console.ReadLine();
@@ -123,7 +155,6 @@ namespace Course071
             socket.Shutdown(SocketShutdown.Both);
 
             socket.Dispose();
-
         }
     }
 }

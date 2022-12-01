@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO.Ports;
+using System.Threading;
 
 namespace Course070
 {
@@ -9,20 +10,20 @@ namespace Course070
         {
             Console.WriteLine("Hello World!");
 
-            var serialPort = new SerialPort("COM1", 9600, Parity.None, 8, StopBits.One);
+            var serialPort = new SerialPort("COM5", 9600, Parity.None, 8, StopBits.One);
 
             serialPort.DataReceived += SerialPort_DataReceived;
 
             // 清空输入输出缓冲区
-            serialPort.DiscardInBuffer();
+            //serialPort.DiscardInBuffer();
 
-            serialPort.DiscardOutBuffer();
+            //serialPort.DiscardOutBuffer();
 
             serialPort.Open();
 
-            var bytes = new byte[4] { 10, 11, 12, 13 };
+            //var bytes = new byte[4] { 10, 11, 12, 13 };
 
-            serialPort.Write(bytes, 0, 3);
+            //serialPort.Write(bytes, 0, 3);
 
             Console.Read();
 
@@ -35,9 +36,11 @@ namespace Course070
         {
             var serialPort = sender as SerialPort;
 
-            var data = new byte[serialPort.BytesToRead];
+            var data = new byte[11];
 
-            serialPort.Read(data, 0, data.Length);
+            Thread.Sleep(30);
+
+            serialPort.Read(data, 0, 11);
 
             // 一个一个字节的读取,读取不到会一直卡在这里
 

@@ -13,19 +13,19 @@ namespace Course073
 
             #region TCPListener
 
-            //var tcpListener = new TcpListener(IPAddress.Parse("0.0.0.0"), 9090);
+            var tcpListener = new TcpListener(IPAddress.Parse("0.0.0.0"), 9090);
 
-            //tcpListener.Start();
+            tcpListener.Start();
 
-            //var client = tcpListener.AcceptSocket();
+            var client = tcpListener.AcceptSocket();
 
-            //client.Send(Encoding.UTF8.GetBytes("Hello"), SocketFlags.None);
+            client.Send(Encoding.UTF8.GetBytes("Hello"), SocketFlags.None);
 
-            //tcpListener.Server.Send(Encoding.UTF8.GetBytes("Hello"), SocketFlags.None);
+            tcpListener.Server.Send(Encoding.UTF8.GetBytes("Hello"), SocketFlags.None);
 
-            //tcpListener.Server.Shutdown(SocketShutdown.Both);
+            tcpListener.Server.Shutdown(SocketShutdown.Both);
 
-            //tcpListener.Server.Dispose();
+            tcpListener.Server.Dispose();
 
 
             #endregion

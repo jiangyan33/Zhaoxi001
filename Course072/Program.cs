@@ -10,6 +10,32 @@ namespace Course072
     {
         static void Main(string[] args)
         {
+
+            var bytes1 = new byte[] { 0x67, 0x30, 0x2E, 0x74, 0x78, 0x74, 0x3D, 0x22, 0xC4, 0xE3, 0xBA, 0xC3, 0x22, 0xFF, 0xFF, 0xFF };
+
+            //var msg = "g0.txt=\"你好\"";
+
+            var ss = BytesToString(bytes1);
+
+            var data = Encoding.ASCII.GetString(bytes1);
+
+            //System.Text.Encoding chs = System.Text.Encoding.GetEncoding("gb2312");
+            //byte[] bytes = chs.GetBytes(msg);
+            //return BytesToHexStr(bytes, seprator);
+
+            //var aa = "0x0F";
+
+            //byte aa = "0x0F";
+
+            //var sss = Convert.ToInt32(aa);
+
+            //var res = 15.ToString("X2");
+
+            //var ss = byte.Parse("0x" + res);
+
+            var rr = StringToBytes("你好");
+
+
             Console.WriteLine("Hello World!");
 
             #region 异步读写TCP
@@ -99,6 +125,33 @@ namespace Course072
             socket.Shutdown(SocketShutdown.Both);
 
             socket.Dispose();
+        }
+
+        private static byte[] StringToBytes(string TheString)
+        {
+            Encoding fromEcoding = Encoding.GetEncoding("UTF-8");//返回utf-8的编码
+
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            Encoding toEcoding = Encoding.GetEncoding(0);
+
+            byte[] fromBytes = fromEcoding.GetBytes(TheString);
+            byte[] tobytes = Encoding.Convert(fromEcoding, toEcoding, fromBytes);//将字节数组从一种编码转换为另一种编码
+            return tobytes;
+
+        }
+        //将GB2312编码转换成汉字
+        private static string BytesToString(byte[] bytes)
+        {
+            string myString;
+
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+
+            Encoding fromEcoding = Encoding.GetEncoding(0);
+
+            Encoding toEcoding = Encoding.GetEncoding("UTF-8");
+            byte[] toBytes = Encoding.Convert(fromEcoding, toEcoding, bytes);
+            myString = toEcoding.GetString(toBytes);//将字节数组解码成字符串
+            return myString;
         }
     }
 }
