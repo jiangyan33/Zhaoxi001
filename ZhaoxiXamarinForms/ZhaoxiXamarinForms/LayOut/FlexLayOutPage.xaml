@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZhaoxiXamarinForms.LayOut.FlexLayOutPage">
+
+    <!--灵活布局,类似UniformGrid,可以颠倒方向  Direction="RowReverse"-->
+    <!--<FlexLayout  Direction="Column" AlignItems="Center">
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Orange"></BoxView>
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Blue"  ></BoxView>
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Red"></BoxView>
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Green"></BoxView>
+        <BoxView  WidthRequest="50" HeightRequest="50" BackgroundColor="Orange" ></BoxView>
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Blue"  ></BoxView>
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Red"></BoxView>
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Green"></BoxView>
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Orange"></BoxView>
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Blue"  ></BoxView>
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Red"></BoxView>
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Green"></BoxView>
+        <BoxView  WidthRequest="50" HeightRequest="50" BackgroundColor="Orange" ></BoxView>
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Blue"  ></BoxView>
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Red"></BoxView>
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Green"></BoxView>
+    </FlexLayout>-->
+
+    <!--<Grid RowSpacing="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid BackgroundColor="Orange" />
+        <Grid BackgroundColor="Green" Grid.Column="1" />
+
+    </Grid>-->
+</ContentPage>

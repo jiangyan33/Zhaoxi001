@@ -95,11 +95,8 @@ namespace Course035
                 Console.WriteLine($"{task.AsyncState}完成了程序，庆祝一下");
             });
 
-
             Console.WriteLine("线程Two：" + $"{Thread.CurrentThread.ManagedThreadId.ToString("00")}");
         }
-
-
 
         private void Teach(string lesson)
         {
@@ -154,7 +151,7 @@ namespace Course035
             //            }
             //            else if (k == "TaskAdvanced_Click_12")
             //            {
-            //                throw new Exception("异常,因为TaskAdvanced_Click_12");
+            //                throw new Exception("异常,因 为TaskAdvanced_Click_12");
             //            }
             //        }));
             //    }

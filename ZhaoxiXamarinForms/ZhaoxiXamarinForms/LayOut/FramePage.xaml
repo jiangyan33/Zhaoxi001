@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ZhaoxiXamarinForms.LayOut.FramePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <StackLayout>
+        <!--  装饰器对象，内部不能放任何元素  -->
+
+        <!--  使用渐变作为背景色  -->
+        <BoxView CornerRadius="15" HeightRequest="50">
+            <BoxView.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Offset="0" Color="Red" />
+                    <GradientStop Offset="1" Color="White" />
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+
+        <!--
+            图片作为背景色加载不出来
+            Frame的Padding设置为0，大小就和高度一样了
+        -->
+        <Frame
+            Padding="0"
+            BackgroundColor="Gray"
+            CornerRadius="15"
+            HeightRequest="100">
+
+            <Grid>
+                <Image Source="logo.png" VerticalOptions="End" />
+                <BoxView
+                    BackgroundColor="Green"
+                    CornerRadius="15"
+                    HeightRequest="30"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="30" />
+            </Grid>
+
+        </Frame>
+
+        <!--
+            是否有阴影
+            超过了外部容器内容是否被切掉
+        -->
+        <Frame
+            Margin="10"
+            Padding="0"
+            BorderColor="Red"
+            CornerRadius="10"
+            HasShadow="False"
+            HeightRequest="50"
+            HorizontalOptions="Center"
+            IsClippedToBounds="True"
+            WidthRequest="100">
+            <BoxView BackgroundColor="Green" WidthRequest="200" />
+        </Frame>
+
+
+    </StackLayout>
+</ContentPage>

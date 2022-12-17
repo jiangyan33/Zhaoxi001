@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ZhaoxiXamarinForms.LayOut.DataAndOpetatePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!--  文本显示  -->
+    <StackLayout>
+        <!--  加粗斜体  -->
+        <Label
+            FontAttributes="Bold,Italic"
+            FontSize="20"
+            Text="Hello Zhao xi"
+            TextColor="Green" />
+
+        <!--  下划线中划线  -->
+        <Label
+            FontSize="20"
+            Text="Hello Zhao xi"
+            TextColor="Red"
+            TextDecorations="Strikethrough,Underline" />
+
+        <!--  字符大小写  字符间隔  -->
+        <Label
+            CharacterSpacing="10"
+            FontSize="20"
+            Text="Hello Zhao xi"
+            TextColor="Red"
+            TextTransform="Lowercase" />
+
+        <!--  行高  -->
+        <Label
+            FontSize="14"
+            LineHeight="1.5"
+            Text="Hello Zhao xi Hello Zhao xi Hello Zhao xi Hello Zhao xi Hello Zhao xi Hello Zhao xi Hello Zhao xi Hello Zhao xi Hello Zhao xi"
+            TextColor="Gray" />
+
+        <!--  解析Html  -->
+
+        <Label TextType="Html">
+            <![CDATA[
+            This is <font color="red">HTML</font> text
+            ]]>
+
+        </Label>
+
+        <!--  多类型文本解析  -->
+
+        <Label TextColor="Red">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="温度：" />
+                    <Span Text="123" />
+                    <Span
+                        Text="百度"
+                        TextColor="Blue"
+                        TextDecorations="Underline">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer />
+                        </Span.GestureRecognizers>
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </StackLayout>
+</ContentPage>

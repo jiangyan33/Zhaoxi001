@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZhaoxiXamarinForms.LayOut.LayOutPage">
+
+    <!--Canvas-->
+    <!--<AbsoluteLayout>
+        -->
+    <!--设置宽高喝位置信息Rectangle-->
+    <!--
+        <BoxView  BackgroundColor="Orange"  AbsoluteLayout.LayoutBounds="100,50,60,40"></BoxView>
+        -->
+    <!--哪个位置是比例值-->
+    <!--
+        <BoxView AbsoluteLayout.LayoutFlags="YProportional" BackgroundColor="Blue"  AbsoluteLayout.LayoutBounds="0,0.5,50,50"></BoxView>
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Red"></BoxView>
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Green"></BoxView>
+    </AbsoluteLayout>-->
+
+    <!--相对布局，1.相对于父节点  2.相对兄弟节点-->
+    <RelativeLayout>
+        <BoxView   BackgroundColor="Orange" x:Name="bv"
+            RelativeLayout.WidthConstraint="100" 
+            RelativeLayout.HeightConstraint="100"  
+                   RelativeLayout.XConstraint="100" 
+                   RelativeLayout.YConstraint="100"></BoxView>
+        <!--相对父节点，的哪个属性值，比例系数，绑定表达式中的相对表达式-->
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Blue"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=0.5}"></BoxView>
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Red"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=bv, Property=Width}"></BoxView>
+        <BoxView WidthRequest="50" HeightRequest="50" BackgroundColor="Green"></BoxView>
+    </RelativeLayout>
+</ContentPage>
